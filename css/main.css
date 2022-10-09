@@ -67,13 +67,24 @@ body {
 
 }
 
-.container {
+/* .container {
     width: 100vw;
-}
+} */
 
 .img {
     width: 100%;
     /* display: block; */
+}
+
+/* Text decoration */
+
+.logo__text {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.03em;
+    opacity: 0.35;
 }
 
 .h3-title {
@@ -115,8 +126,105 @@ body {
     opacity: 0.6;
 }
 
+.text_menu {
+    text-transform: uppercase;
+    opacity: 0.85;
+}
 
-/* Grid */
+/* Header */
+
+.nav {
+    height: 70px;
+    background-color: #ffffff;
+    z-index: 2;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.nav__logo {
+    width: 23%;
+}
+
+.nav__menu {
+    width: 57%;
+}
+
+.nav__lang {
+    width: 20%;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+
+}
+
+.logo__img {
+    position: relative;
+    top: 22px;
+}
+
+.logo__text {
+    display: inline-block;
+    padding-left: 10px;
+
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.menu-item {
+    display: inline-block;
+}
+
+.menu__list:first-of-type {
+    margin-right: 20px;
+}
+
+.menu__list:nth-of-type(2) {
+    margin-right: 20px;
+}
+
+.menu-item__link {
+    display: flex;
+
+}
+
+.menu-item__text {
+    display: inline-block;
+}
+
+.menu-item__arrow {
+    display: inline-block;
+    background-image: url(../img/menu_arrow_icon.svg);
+    background-size: auto;
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 5px;
+    margin: 9px 10px 10px 10px;
+}
+
+.lang {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.burger {
+    display: none;
+}
+
+/* Section grid */
 
 .about-us {
     width: 100vw;
@@ -126,8 +234,7 @@ body {
 
 }
 
-.about-us__title-wrapper
- {
+.about-us__title-wrapper {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
@@ -140,7 +247,7 @@ body {
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 3;
-    z-index: 10; 
+    z-index: 10;
 }
 
 .about-us__button_left {
@@ -148,7 +255,7 @@ body {
     grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 3;
-    z-index: 10; 
+    z-index: 10;
 }
 
 .about-us__img {
@@ -156,7 +263,7 @@ body {
     grid-column-end: 3;
     grid-row-start: 3;
     grid-row-end: 5;
-    z-index: 10; 
+    z-index: 10;
 }
 
 .about-us__description {
@@ -164,7 +271,7 @@ body {
     grid-column-end: 3;
     grid-row-start: 4;
     grid-row-end: 5;
-    z-index: 20; 
+    z-index: 20;
 }
 
 
@@ -176,6 +283,8 @@ body {
     padding-left: 29.16%;
     /* 210px */
 }
+
+
 
 .title__name {
     padding-bottom: 30px;
@@ -189,6 +298,7 @@ body {
     max-width: 325px;
 }
 
+
 .scroll-link {
     position: absolute;
     z-index: 8;
@@ -198,57 +308,81 @@ body {
     /* 35px Ð²Ñ–Ð´Ð½Ð¾ÑÐ½Ð¾ 720px */
 }
 
+@media screen and (max-width: 1315px) {
+
+
+    .nav {
+        align-items: center;
+    }
+
+    .nav__logo {
+        width: 90%;
+    }
+
+    .nav__menu {
+        display: none;
+    }
+
+    .nav__lang {
+        display: none;
+    }
+
+
+    .burger {
+        display: block;
+    }
+}
+
 @media screen and (max-width: 900px) {
 
 
-.about-us {
-    width: 100vw;
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: 50% 50%;
+    .about-us {
+        width: 100vw;
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: 50% 50%;
 
-}
+    }
 
-.about-us__title-wrapper
- {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    z-index: 10;
-}
+    .about-us__title-wrapper {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        z-index: 10;
+    }
 
-.about-us__button_ridht {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    z-index: 10; 
-}
+    .about-us__button_ridht {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        z-index: 10;
+    }
 
-.about-us__button_left {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    z-index: 10; 
-}
+    .about-us__button_left {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        z-index: 10;
+    }
 
-.about-us__img {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 3;
-    grid-row-end: 4;
-    z-index: 10; 
-}
+    .about-us__img {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        z-index: 10;
+    }
 
-.about-us__description {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 3;
-    grid-row-end: 4;
-    z-index: 20; 
-}
+    .about-us__description {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        z-index: 20;
+    }
 
 }
 
@@ -260,48 +394,55 @@ body {
         display: grid;
         grid-template-rows: auto auto auto auto;
         grid-template-columns: 100%;
-    
+
     }
-    
-    .about-us__title-wrapper
-     {
+
+    .about-us__title-wrapper {
         grid-column-start: 1;
         grid-column-end: 2;
         grid-row-start: 1;
         grid-row-end: 2;
         z-index: 10;
     }
-    
+
     .about-us__button_ridht {
         grid-column-start: 1;
         grid-column-end: 2;
         grid-row-start: 2;
         grid-row-end: 3;
-        z-index: 10; 
+        z-index: 10;
     }
-    
+
     .about-us__button_left {
         grid-column-start: 1;
         grid-column-end: 2;
         grid-row-start: 3;
         grid-row-end: 4;
-        z-index: 10; 
+        z-index: 10;
     }
-    
+
     .about-us__img {
         grid-column-start: 1;
         grid-column-end: 2;
         grid-row-start: 4;
         grid-row-end: 5;
-        z-index: 10; 
+        z-index: 10;
     }
-    
+
     .about-us__description {
         grid-column-start: 1;
         grid-column-end: 2;
         grid-row-start: 5;
         grid-row-end: 6;
-        z-index: 20; 
+        z-index: 20;
     }
-    
+
+}
+
+@media screen and (max-width: 365px) {
+
+    .nav {
+        padding: 0 20px;
     }
+
+}
