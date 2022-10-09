@@ -203,7 +203,7 @@ body {
     display: inline-block;
 }
 
-.menu-item__arrow {
+/* .menu-item__arrow {
     display: inline-block;
     background-image: url(../img/menu_arrow_icon.svg);
     background-size: auto;
@@ -211,6 +211,17 @@ body {
     width: 10px;
     height: 5px;
     margin: 9px 10px 10px 10px;
+} */
+
+.menu-item__arrow::before {
+    content: '';
+    border: solid black;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: translateX(10px) rotate(45deg) translateY(-100%);
+    -webkit-transform: translateX(10px) rotate(45deg) translateY(-100%);
+
 }
 
 .lang {
@@ -240,6 +251,7 @@ body {
     grid-row-start: 1;
     grid-row-end: 2;
     z-index: 10;
+    position: relative;
 }
 
 .about-us__button_ridht {
@@ -278,6 +290,9 @@ body {
 .about-us__button {
     height: 90px;
 }
+.about-us__button:hover {
+    transition: background-color 500ms ease-out;
+}
 
 .two-item-section__wrapper_left {
     padding-left: 29.16%;
@@ -298,14 +313,43 @@ body {
     max-width: 325px;
 }
 
+.about-us {
+    position: relative;
+}
 
 .scroll-link {
     position: absolute;
-    z-index: 8;
+    z-index: 40;
     bottom: 4.26%;
-    /* 35px Ð²Ñ–Ð´Ð½Ð¾ÑÐ½Ð¾ 820px */
+
     right: 4.86%;
-    /* 35px Ð²Ñ–Ð´Ð½Ð¾ÑÐ½Ð¾ 720px */
+
+}
+
+.scroll-link:hover {
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    animation-name: bounce-1;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+
+@keyframes bounce-1 {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-40px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.scroll-link_about_us {
+    bottom: 27.26%;
 }
 
 @media screen and (max-width: 1315px) {
@@ -335,6 +379,9 @@ body {
 
 @media screen and (max-width: 900px) {
 
+    .scroll-link {
+        display: none;
+    }
 
     .about-us {
         width: 100vw;
@@ -352,7 +399,7 @@ body {
         z-index: 10;
     }
 
-    .about-us__button_ridht {
+    .about-us__button_left {
         grid-column-start: 1;
         grid-column-end: 2;
         grid-row-start: 2;
@@ -360,13 +407,16 @@ body {
         z-index: 10;
     }
 
-    .about-us__button_left {
+    
+
+    .about-us__button_right {
         grid-column-start: 2;
         grid-column-end: 3;
         grid-row-start: 2;
         grid-row-end: 3;
         z-index: 10;
     }
+
 
     .about-us__img {
         grid-column-start: 1;
